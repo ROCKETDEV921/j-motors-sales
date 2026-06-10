@@ -7,6 +7,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Geologica:wght@400;500;600;700;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
 
   :root {
     --green: #2E7D32;
@@ -640,10 +641,13 @@
 <!-- NAV -->
 <nav class="nav">
   <a class="nav-logo" href="#">
-    <span class="nav-logo-text">Джимоторс</span>
+    <object type="image/svg+xml" data="https://jmotorshop.ru/assets/images/new-logo.svg" style="height:52px;width:auto;display:block;pointer-events:none;">
+      <span class="nav-logo-text">Джимоторс</span>
+    </object>
   </a>
   <ul class="nav-links">
     <li><a href="#how">Как подбираем</a></li>
+    <li><a href="#why">Почему выбирают нас?</a></li>
     <li><a href="#reviews">Отзывы</a></li>
   </ul>
   <div class="nav-right">
@@ -658,6 +662,7 @@
 <!-- MOBILE MENU -->
 <div class="mobile-menu" id="mobileMenu">
   <a href="#how">Как подбираем</a>
+  <a href="#why">Почему выбирают нас?</a>
   <a href="#reviews">Отзывы</a>
   <div class="mobile-menu-contacts">
     <a href="tel:88005510165" class="mobile-menu-phone">8-800-551-01-65</a>
@@ -841,7 +846,7 @@
 </section>
 
 <!-- WHY US -->
-<section class="why-section">
+<section class="why-section" id="why">
   <div class="section-wrap">
     <h2 class="section-title">Почему выбирают нас</h2>
     <p class="section-sub">Более 5 000 агрегатов в наличии и на заказ</p>
