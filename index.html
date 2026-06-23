@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="ru">
-<head>
-<meta charset="UTF-8">
+<!-- saved from url=(0046)https://rocketdev921.github.io/j-motors-sales/ -->
+<html lang="ru"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Джимоторс — Контрактные двигатели и КПП</title>
-<link href="https://fonts.googleapis.com/css2?family=Geologica:wght@400;500;600;700;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="./Джимоторс — Контрактные двигатели и КПП_files/css2" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   html { scroll-behavior: smooth; }
@@ -183,6 +183,38 @@
     max-width: 1200px;
     margin: 0 auto;
   }
+  /* ── HERO CTA BUTTON ── */
+  @keyframes pulse {
+    0%, 100% { box-shadow: 0 4px 20px rgba(56,185,60,0.45), 0 0 0 0 rgba(56,185,60,0.4); }
+    50%       { box-shadow: 0 8px 32px rgba(56,185,60,0.6), 0 0 0 10px rgba(56,185,60,0); }
+  }
+  .hero-cta-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: linear-gradient(135deg, #3ddc42, #2ab82f);
+    color: #fff;
+    font-family: 'Geologica', sans-serif;
+    font-weight: 700;
+    font-size: 17px;
+    padding: 18px 36px;
+    border-radius: 12px;
+    text-decoration: none;
+    margin-top: 16px;
+    animation: pulse 2.2s ease-in-out infinite;
+    transition: transform 0.15s, filter 0.2s;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.15);
+  }
+  .hero-cta-btn:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.12);
+    animation-play-state: paused;
+  }
+  .hero-cta-btn:active { transform: translateY(0); }
+  @media (max-width: 600px) {
+    .hero-cta-btn { font-size: 15px; padding: 15px 24px; width: 100%; justify-content: center; }
+  }
+
   /* ── HERO ANIMATIONS ── */
   @keyframes fadeUp {
     from { opacity: 0; transform: translateY(28px); }
@@ -337,7 +369,7 @@
     font-size: 14px;
     flex-shrink: 0;
   }
-  .trust-item-text { font-size: 11px; line-height: 1.4; font-weight: 500; color: var(--text-muted); }
+  .trust-item-text { font-size: 11px; line-height: 1.4; font-weight: 500; color: #fff; }
 
   /* ── RIGHT PANEL ── */
   .example-label {
@@ -562,7 +594,7 @@
   .discount-strip {
     display: flex;
     gap: 10px;
-    margin-bottom: 20px;
+    margin-bottom: 8px;
   }
   .discount-card {
     flex: 1;
@@ -652,19 +684,19 @@
 
 <!-- NAV -->
 <nav class="nav">
-  <a class="nav-logo" href="#">
-    <object type="image/svg+xml" data="https://jmotorshop.ru/assets/images/new-logo.svg" style="height:52px;width:auto;display:block;pointer-events:none;">
+  <a class="nav-logo" href="https://rocketdev921.github.io/j-motors-sales/#">
+    <object type="image/svg+xml" data="./Джимоторс — Контрактные двигатели и КПП_files/new-logo.svg" style="height:52px;width:auto;display:block;pointer-events:none;">
       <span class="nav-logo-text">Джимоторс</span>
     </object>
   </a>
   <ul class="nav-links">
-    <li><a href="#how">Как подбираем</a></li>
-    <li><a href="#why">Почему выбирают нас?</a></li>
-    <li><a href="#reviews">Отзывы</a></li>
+    <li><a href="https://rocketdev921.github.io/j-motors-sales/#how">Как подбираем</a></li>
+    <li><a href="https://rocketdev921.github.io/j-motors-sales/#why">Почему выбирают нас?</a></li>
+    <li><a href="https://rocketdev921.github.io/j-motors-sales/#reviews">Отзывы</a></li>
   </ul>
   <div class="nav-right">
     <a href="tel:88005510165" class="nav-phone">8-800-551-01-65</a>
-    <a href="#form" class="nav-btn">Оставить заявку</a>
+    <a href="https://rocketdev921.github.io/j-motors-sales/#form" class="nav-btn">Оставить заявку</a>
     <button class="nav-burger" id="burgerBtn" aria-label="Меню">
       <span></span><span></span><span></span>
     </button>
@@ -673,12 +705,12 @@
 
 <!-- MOBILE MENU -->
 <div class="mobile-menu" id="mobileMenu">
-  <a href="#how">Как подбираем</a>
-  <a href="#why">Почему выбирают нас?</a>
-  <a href="#reviews">Отзывы</a>
+  <a href="https://rocketdev921.github.io/j-motors-sales/#how">Как подбираем</a>
+  <a href="https://rocketdev921.github.io/j-motors-sales/#why">Почему выбирают нас?</a>
+  <a href="https://rocketdev921.github.io/j-motors-sales/#reviews">Отзывы</a>
   <div class="mobile-menu-contacts">
     <a href="tel:88005510165" class="mobile-menu-phone">8-800-551-01-65</a>
-    <a href="#form" class="nav-btn" style="text-align:center;margin-top:8px;" onclick="document.getElementById('mobileMenu').classList.remove('open')">Оставить заявку</a>
+    <a href="https://rocketdev921.github.io/j-motors-sales/#form" class="nav-btn" style="text-align:center;margin-top:8px;" onclick="document.getElementById(&#39;mobileMenu&#39;).classList.remove(&#39;open&#39;)">Оставить заявку</a>
   </div>
 </div>
 
@@ -700,80 +732,25 @@
       </div>
     </div>
 
-    <div class="form-card">
-      <!-- ФОРМА -->
-      <div id="formContent">
-        <div class="form-row">
-          <div class="form-field">
-            <label>Марка авто</label>
-            <select id="fMarka">
-              <option value="">Выберите марку</option>
-              <option>Audi</option><option>BMW</option><option>Citroen</option>
-              <option>Ford</option><option>Hyundai</option><option>KIA</option>
-              <option>Land Rover</option><option>Lexus</option><option>Mazda</option>
-              <option>Mercedes</option><option>Mitsubishi</option><option>Nissan</option>
-              <option>Opel</option><option>Peugeot</option><option>Porsche</option>
-              <option>Renault</option><option>Toyota</option><option>Volkswagen</option>
-              <option>Volvo</option><option>Другое</option>
-            </select>
-          </div>
-          <div class="form-field">
-            <label>Год</label>
-            <select id="fYear">
-              <option value="">Год выпуска</option>
-              <option>2024</option><option>2023</option><option>2022</option>
-              <option>2021</option><option>2020</option><option>2019</option>
-              <option>2018</option><option>2017</option><option>2016</option><option>2015</option>
-              <option>2014 и раньше</option>
-            </select>
-          </div>
-        </div>
+    <a href="#tilda-form" class="hero-cta-btn">
+      Получить подбор за 15 минут
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0;">
+        <path d="M10 3L10 17M10 17L4 11M10 17L16 11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </a>
 
-        <div class="form-row-2" style="grid-template-columns:1fr;">
-          <div class="form-field">
-            <label for="fVin">VIN-номер (необязательно)</label>
-            <input type="text" id="fVin" placeholder="Например: XTA210930Y2441234" maxlength="17" style="text-transform:uppercase;">
-          </div>
-        </div>
-        <div class="form-row-2">
-          <div class="form-field">
-            <label>Телефон *</label>
-            <input type="tel" id="fPhone" placeholder="+7 (___) ___-__-__">
-          </div>
-          <div class="form-field">
-            <label>Куда удобно получить подбор</label>
-            <div class="form-channels">
-              <button class="ch-btn active" data-ch="Звонок">📞 Звонок</button>
-              <button class="ch-btn" data-ch="Телеграм">✈ Телеграм</button>
-              <button class="ch-btn" data-ch="Макс"><span style="display:inline-block;width:12px;height:12px;border-radius:50%;background:#9b59b6;vertical-align:middle;margin-right:5px;flex-shrink:0;"></span>Макс</button>
-            </div>
-          </div>
-        </div>
-
-        <button class="submit-btn" id="submitBtn">Получить подбор за 15 минут</button>
-        <div class="form-error-msg" id="formError">⚠️ Заполните номер телефона и повторите попытку.</div>
+    <div class="trust-strip" style="margin-top:28px;">
+      <div class="trust-item">
+        <div class="trust-item-icon">✅</div>
+        <div class="trust-item-text">Проверяем совместимость</div>
       </div>
-
-      <!-- SUCCESS -->
-      <div class="form-success" id="formSuccess">
-        <div class="form-success-icon">✅</div>
-        <div class="form-success-title">Заявка принята!</div>
-        <div class="form-success-sub">Свяжемся с вами в течение 15 минут и пришлём подборку.</div>
+      <div class="trust-item">
+        <div class="trust-item-icon">📷</div>
+        <div class="trust-item-text">Присылаем фото и данные агрегата</div>
       </div>
-
-      <div class="trust-strip">
-        <div class="trust-item">
-          <div class="trust-item-icon">✅</div>
-          <div class="trust-item-text">Проверяем совместимость</div>
-        </div>
-        <div class="trust-item">
-          <div class="trust-item-icon">📷</div>
-          <div class="trust-item-text">Присылаем фото и данные агрегата</div>
-        </div>
-        <div class="trust-item">
-          <div class="trust-item-icon">📋</div>
-          <div class="trust-item-text">Документы и гарантия</div>
-        </div>
+      <div class="trust-item">
+        <div class="trust-item-icon">📋</div>
+        <div class="trust-item-text">Документы и гарантия</div>
       </div>
     </div>
   </div>
@@ -961,7 +938,7 @@
   <div class="section-wrap">
     <h2 class="cta-title">Нужен двигатель или КПП?</h2>
     <p class="cta-sub">Оставьте заявку — пришлём подборку с ценами и фото за 15 минут</p>
-    <a href="#form" class="cta-btn">Получить подбор бесплатно</a>
+    <a href="https://rocketdev921.github.io/j-motors-sales/#form" class="cta-btn">Получить подбор бесплатно</a>
   </div>
 </section>
 
@@ -1070,5 +1047,6 @@ document.getElementById('submitBtn').addEventListener('click', async function() 
   }
 });
 </script>
-</body>
-</html>
+
+
+</body></html>
