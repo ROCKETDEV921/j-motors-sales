@@ -3,10 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Джимоторс — Контрактные двигатели и КПП</title>
+<title>Джимоторс — О нас, отзывы</title>
 <link href="https://fonts.googleapis.com/css2?family=Geologica:wght@400;500;600;700;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
+
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
 
   :root {
     --green: #2E7D32;
@@ -49,6 +51,7 @@
     align-items: center;
     gap: 8px;
     text-decoration: none;
+    line-height: 0;
   }
   .nav-logo-icon { font-size: 22px; line-height: 1; }
   .nav-logo-text {
@@ -182,6 +185,44 @@
     max-width: 1200px;
     margin: 0 auto;
   }
+  /* ── HERO CTA BUTTON ── */
+  @keyframes pulse {
+    0%, 100% { box-shadow: 0 4px 20px rgba(56,185,60,0.45), 0 0 0 0 rgba(56,185,60,0.4); }
+    50%       { box-shadow: 0 8px 32px rgba(56,185,60,0.6), 0 0 0 10px rgba(56,185,60,0); }
+  }
+  .hero-cta-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: linear-gradient(135deg, #3ddc42, #2ab82f);
+    color: #fff;
+    font-family: 'Geologica', sans-serif;
+    font-weight: 700;
+    font-size: 17px;
+    padding: 18px 36px;
+    border-radius: 12px;
+    text-decoration: none;
+    margin-top: 16px;
+    animation: pulse 2.2s ease-in-out infinite;
+    transition: transform 0.15s, filter 0.2s;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.15);
+  }
+  .hero-cta-btn:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.12);
+    animation-play-state: paused;
+  }
+  .hero-cta-btn:active { transform: translateY(0); }
+  @media (max-width: 600px) {
+    .hero-cta-btn { font-size: 15px; padding: 15px 24px; width: 100%; justify-content: center; }
+  }
+
+  /* ── HERO ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(28px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
   .hero-title {
     font-family: 'Geologica', sans-serif;
     font-weight: 900;
@@ -189,12 +230,16 @@
     line-height: 1.15;
     margin-bottom: 16px;
     color: #fff;
+    animation: fadeUp 0.7s ease both;
+    animation-delay: 0.1s;
   }
   .hero-subtitle {
     font-size: 15px;
     color: rgba(255,255,255,0.88);
     margin-bottom: 28px;
     line-height: 1.7;
+    animation: fadeUp 0.7s ease both;
+    animation-delay: 0.3s;
   }
 
   /* ── FORM ── */
@@ -203,6 +248,8 @@
     border-radius: var(--radius);
     border: 1px solid var(--border);
     padding: 20px;
+    animation: fadeUp 0.7s ease both;
+    animation-delay: 0.5s;
   }
   .form-row {
     display: grid;
@@ -324,7 +371,7 @@
     font-size: 14px;
     flex-shrink: 0;
   }
-  .trust-item-text { font-size: 11px; line-height: 1.4; font-weight: 500; color: var(--text-muted); }
+  .trust-item-text { font-size: 11px; line-height: 1.4; font-weight: 500; color: #fff; }
 
   /* ── RIGHT PANEL ── */
   .example-label {
@@ -549,7 +596,7 @@
   .discount-strip {
     display: flex;
     gap: 10px;
-    margin-bottom: 20px;
+    margin-bottom: 8px;
   }
   .discount-card {
     flex: 1;
@@ -633,182 +680,10 @@
 
     .footer { flex-direction: column; align-items: flex-start; gap: 8px; padding: 20px 4%; }
   }
+
 </style>
 </head>
 <body>
-
-<!-- NAV -->
-<nav class="nav">
-  <a class="nav-logo" href="#">
-    <span class="nav-logo-text">Джимоторс</span>
-  </a>
-  <ul class="nav-links">
-    <li><a href="#how">Как подбираем</a></li>
-    <li><a href="#reviews">Отзывы</a></li>
-  </ul>
-  <div class="nav-right">
-    <a href="tel:88005510165" class="nav-phone">8-800-551-01-65</a>
-    <a href="#form" class="nav-btn">Оставить заявку</a>
-    <button class="nav-burger" id="burgerBtn" aria-label="Меню">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-</nav>
-
-<!-- MOBILE MENU -->
-<div class="mobile-menu" id="mobileMenu">
-  <a href="#how">Как подбираем</a>
-  <a href="#reviews">Отзывы</a>
-  <div class="mobile-menu-contacts">
-    <a href="tel:88005510165" class="mobile-menu-phone">8-800-551-01-65</a>
-    <a href="#form" class="nav-btn" style="text-align:center;margin-top:8px;" onclick="document.getElementById('mobileMenu').classList.remove('open')">Оставить заявку</a>
-  </div>
-</div>
-
-<!-- HERO -->
-<div class="hero-wrap">
-<section class="hero" id="form">
-  <div class="hero-left">
-    <h1 class="hero-title">Подберём контрактный двигатель или КПП под ваш автомобиль за 15 минут</h1>
-    <p class="hero-subtitle">Укажите марку, модель и год выпуска. Проверим совместимость и пришлём варианты с фото, ценой, сроком доставки, документами и гарантией.</p>
-
-    <div class="discount-strip">
-      <div class="discount-card engine">
-        <div class="discount-pct">−5%</div>
-        <div class="discount-label">Скидка на<br>двигатели</div>
-      </div>
-      <div class="discount-card gearbox">
-        <div class="discount-pct">−10%</div>
-        <div class="discount-label">Скидка на<br>КПП</div>
-      </div>
-    </div>
-
-    <div class="form-card">
-      <!-- ФОРМА -->
-      <div id="formContent">
-        <div class="form-row">
-          <div class="form-field">
-            <label>Марка авто</label>
-            <select id="fMarka">
-              <option value="">Выберите марку</option>
-              <option>Audi</option><option>BMW</option><option>Citroen</option>
-              <option>Ford</option><option>Hyundai</option><option>KIA</option>
-              <option>Land Rover</option><option>Lexus</option><option>Mazda</option>
-              <option>Mercedes</option><option>Mitsubishi</option><option>Nissan</option>
-              <option>Opel</option><option>Peugeot</option><option>Porsche</option>
-              <option>Renault</option><option>Toyota</option><option>Volkswagen</option>
-              <option>Volvo</option><option>Другое</option>
-            </select>
-          </div>
-          <div class="form-field">
-            <label>Год</label>
-            <select id="fYear">
-              <option value="">Год выпуска</option>
-              <option>2024</option><option>2023</option><option>2022</option>
-              <option>2021</option><option>2020</option><option>2019</option>
-              <option>2018</option><option>2017</option><option>2016</option><option>2015</option>
-              <option>2014 и раньше</option>
-            </select>
-          </div>
-        </div>
-
-        <div class="form-row-2" style="grid-template-columns:1fr;">
-          <div class="form-field">
-            <label for="fVin">VIN-номер (необязательно)</label>
-            <input type="text" id="fVin" placeholder="Например: XTA210930Y2441234" maxlength="17" style="text-transform:uppercase;">
-          </div>
-        </div>
-        <div class="form-row-2">
-          <div class="form-field">
-            <label>Телефон *</label>
-            <input type="tel" id="fPhone" placeholder="+7 (___) ___-__-__">
-          </div>
-          <div class="form-field">
-            <label>Куда удобно получить подбор</label>
-            <div class="form-channels">
-              <button class="ch-btn active" data-ch="Телеграм">✈ Телеграм</button>
-              <button class="ch-btn" data-ch="Макс"><span style="display:inline-block;width:12px;height:12px;border-radius:50%;background:#9b59b6;vertical-align:middle;margin-right:5px;flex-shrink:0;"></span>Макс</button>
-              <button class="ch-btn" data-ch="Звонок">📞 Звонок</button>
-            </div>
-          </div>
-        </div>
-
-        <button class="submit-btn" id="submitBtn">Получить подбор за 15 минут</button>
-        <div class="form-error-msg" id="formError">⚠️ Заполните номер телефона и повторите попытку.</div>
-      </div>
-
-      <!-- SUCCESS -->
-      <div class="form-success" id="formSuccess">
-        <div class="form-success-icon">✅</div>
-        <div class="form-success-title">Заявка принята!</div>
-        <div class="form-success-sub">Свяжемся с вами в течение 15 минут и пришлём подборку.</div>
-      </div>
-
-      <div class="trust-strip">
-        <div class="trust-item">
-          <div class="trust-item-icon">✅</div>
-          <div class="trust-item-text">Проверяем совместимость</div>
-        </div>
-        <div class="trust-item">
-          <div class="trust-item-icon">📷</div>
-          <div class="trust-item-text">Присылаем фото и данные агрегата</div>
-        </div>
-        <div class="trust-item">
-          <div class="trust-item-icon">📋</div>
-          <div class="trust-item-text">Документы и гарантия</div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- RIGHT PANEL -->
-  <div class="hero-right">
-    <div class="example-label">Пример готового подбора</div>
-    <div class="example-title">Пример подбора для Toyota Camry 2.5</div>
-
-    <div class="part-card">
-      <div class="part-img-placeholder">⚙️</div>
-      <div class="part-info">
-        <div class="part-name">Двигатель 2AR-FE</div>
-        <div class="part-desc">Совместим с Toyota Camry XV50 2.5</div>
-        <div class="part-meta">
-          <div class="part-price">145 000 ₽</div>
-          <div class="part-badge">🚚 Доставка: <strong>&nbsp;3–5 дней</strong></div>
-          <div class="part-badge badge-green">✔ Гарантия: 30 дней</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="part-card">
-      <div class="part-img-placeholder">🔩</div>
-      <div class="part-info">
-        <div class="part-name">АКПП U760E</div>
-        <div class="part-desc">Проверена по VIN</div>
-        <div class="part-meta">
-          <div class="part-price">98 000 ₽</div>
-          <div class="part-badge">🚚 Доставка: <strong>&nbsp;4 дня</strong></div>
-          <div class="part-badge badge-green">✔ Гарантия: 30 дней</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="part-card">
-      <div class="part-img-placeholder">⚙️</div>
-      <div class="part-info">
-        <div class="part-name">Двигатель 2AR-FE, пробег 74 000 км</div>
-        <div class="part-desc">Фото и документы в наличии</div>
-        <div class="part-meta">
-          <div class="part-price">159 000 ₽</div>
-          <div class="part-badge">🚚 Доставка: <strong>&nbsp;2–4 дня</strong></div>
-          <div class="part-badge badge-green">✔ Гарантия: 30 дней</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="example-footer">ℹ️ После заявки пришлём похожую подборку с фото, ценой и сроками</div>
-  </div>
-</section>
-</div>
 
 <!-- HOW IT WORKS -->
 <section class="how-section" id="how">
@@ -841,7 +716,7 @@
 </section>
 
 <!-- WHY US -->
-<section class="why-section">
+<section class="why-section" id="why">
   <div class="section-wrap">
     <h2 class="section-title">Почему выбирают нас</h2>
     <p class="section-sub">Более 5 000 агрегатов в наличии и на заказ</p>
@@ -944,7 +819,7 @@
   <div class="section-wrap">
     <h2 class="cta-title">Нужен двигатель или КПП?</h2>
     <p class="cta-sub">Оставьте заявку — пришлём подборку с ценами и фото за 15 минут</p>
-    <a href="#form" class="cta-btn">Получить подбор бесплатно</a>
+    <a href="https://rocketdev921.github.io/j-motors-sales/#form" class="cta-btn">Получить подбор бесплатно</a>
   </div>
 </section>
 
@@ -977,7 +852,7 @@ menu.querySelectorAll('a').forEach(a => {
 /* ══════════════════════════════════════════
    ВЫБОР КАНАЛА СВЯЗИ
 ══════════════════════════════════════════ */
-let selectedChannel = 'Телеграм';
+let selectedChannel = 'Звонок';
 document.querySelectorAll('.ch-btn').forEach(btn => {
   btn.addEventListener('click', function() {
     document.querySelectorAll('.ch-btn').forEach(b => b.classList.remove('active'));
@@ -1053,5 +928,7 @@ document.getElementById('submitBtn').addEventListener('click', async function() 
   }
 });
 </script>
-</body>
-</html>
+
+
+
+</body></html>
